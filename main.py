@@ -6,6 +6,7 @@ import torch
 
 from solver import Solver
 from utils.utils import str2bool
+from clusterone import get_logs_path
 
 def main(args):
 
@@ -57,7 +58,7 @@ if __name__ == "__main__":
     parser.add_argument('--dataset', type=str, default='FMNIST', help='dataset type')
     parser.add_argument('--dset_dir', type=str, default='datasets', help='dataset directory path')
     parser.add_argument('--summary_dir', type=str, default='summary', help='summary directory path')
-    parser.add_argument('--output_dir', type=str, default='output', help='output directory path')
+    parser.add_argument('--output_dir', type=str, default=get_logs_path('output'), help='output directory path')
     parser.add_argument('--ckpt_dir', type=str, default='checkpoints', help='checkpoint directory path')
     parser.add_argument('--load_ckpt', type=str, default='', help='')
     parser.add_argument('--cuda', type=str2bool, default=True, help='enable cuda')
